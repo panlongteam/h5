@@ -1,0 +1,94 @@
+*{padding: 0;margin: 0;}
+.hide{display: none;}
+
+
+body{width: 100%;height: 100%;overflow: hidden;}
+.music{width: 0.8rem;height: 0.8rem;position: absolute;top: 0.5rem;right: 0.5rem;z-index: 9;}
+.music.on{animation:musicRotate 1s steps(12, end) infinite;-webkit-animation:musicRotate 1s steps(12, end) infinite;}
+.section{text-align: center;position: relative;width: 1px;height: 1px;overflow: hidden;}
+.section.show{width: 100%;height: 100%;}
+.page{background: url(../img/bj.png) no-repeat;background-size: 100% 100%;width: 100%;height: 100%;position: relative;z-index: 1;}
+.page1 .ser1{width: 7rem;position: absolute;top: 0.2rem;left: -2.2rem;}
+.page1 .ser2{width: 1.4rem;position: absolute;top: 2rem;right: 0.8rem;}
+.page1 .btn1{position: absolute;bottom: 1.6rem;left: 50%;width: 3.6rem;margin-left: -1.8rem;}
+.page1 img{opacity: 0;}
+.page1 img.on{opacity: 1;transition: all 7s;}
+.page1 .btn1.scale{animation:scale 3s linear infinite;}
+
+.cover{height: 100%;width: 100%;display: none;}
+.upward{width: 0.68rem;position: absolute;left: 50%;bottom: 0.2rem;margin-left: -0.34rem;display: none;animation:scale 2s linear infinite;}
+.btn{width: 3rem;position: absolute;left: 50%;bottom: 0.2rem;margin-left: -1.5rem; display: none;}
+.mask{padding: 0;}
+.next{position: absolute;left: 0.48rem;bottom: 0.36rem;width: 60px;display: none;animation:scale 2s linear infinite;}
+
+
+/*灰色调*/
+/*-webkit-filter:grayscale(100%)*/
+video{position: fixed; right:0;bottom: 0;z-index: -9999;width: 1px;height: 1px;}
+.fit{object-fit: cover;object-position: center center;}
+
+@-webkit-keyframes musicRotate{
+  0%{
+    -webkit-transform:rotate3d(0, 0, 1, 0deg);
+            transform:rotate3d(0, 0, 1, 0deg);
+  }
+  100%{
+    -webkit-transform:rotate3d(0, 0, 1, 360deg);
+            transform:rotate3d(0, 0, 1, 360deg);
+  }
+}
+@keyframes musicRotate{
+  0%{
+    -webkit-transform:rotate3d(0, 0, 1, 0deg);
+            transform:rotate3d(0, 0, 1, 0deg);
+  }
+  100%{
+    -webkit-transform:rotate3d(0, 0, 1, 360deg);
+            transform:rotate3d(0, 0, 1, 360deg);
+  }
+}
+
+
+
+@keyframes scale{
+	0%{transform: scale(0.95);}
+	50%{transform: scale(1.1);}
+	100%{transform: scale(0.95);}
+}
+@-webkit-keyframes scale{
+	0%{transform: scale(0.95);}
+	50%{transform: scale(1.1);}
+	100%{transform: scale(0.95);}
+}
+@-moz-keyframes scale{
+	0%{transform: scale(0.95);}
+	50%{transform: scale(1.1);}
+	100%{transform: scale(0.95);}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

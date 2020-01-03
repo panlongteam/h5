@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<meta http-equiv="content-type" content="text/html" >
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width" />
+		<meta name="app-mobile-web-app-capable"  content="yes" />
+		<meta name="app-mobile-web-app-status-bar-style" content="black-translucent" />
+		<link rel="stylesheet" type="text/css" href="css/base.css?1111"/>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			!function(n){var  e=n.document,t=e.documentElement,i=750,d=i/100,o="orientationchange"in n?"orientationchange":"resize",a=function(){var n=t.clientWidth||375;n>750&&(n=750);t.style.fontSize=n/d+"px"};e.addEventListener&&(n.addEventListener(o,a,!1),e.addEventListener("DOMContentLoaded",a,!1))}(window);
+		</script>
+	</head>
+	<body>
+		<div id="page" class="page">
+			<!-- <img class="music" src="img/music.png" > -->
+			<div class="page1" id="pageOne">
+				<img class="ser1" src="img/ser1.png" >
+				<img class="ser2" src="img/ser2.png" >
+				<img class="btn1" src="img/btn1.png" >
+			</div>
+			<div class="section page2 hide" id="pageTwo">
+				<video muted preload='auto' id='video2' src='img/video2.mp4' poster="img/cover1.png" webkit-playsinline='true' playsinline='true' x-webkit-airplay='true' x5-video-player-type='h5-page' x5-video-player-fullscreen='false' x5-video-ignore-metadata='true' width='100%' height='100%' webkit-playsinline="webkit-playsinline"><p> 不支持video</p> </video>
+				<img class="cover" src="img/cover1.png" >
+				<img class="upward" src="img/upward.png" >
+			</div>
+			<div class="section page3 hide" id="pageThree">
+				<video muted preload='auto' id='video3' src='img/video3.mp4' webkit-playsinline='true' playsinline='true' x-webkit-airplay='true' x5-video-player-type='h5-page' x5-video-player-fullscreen='true' x5-video-ignore-metadata='true' width='100%' height='100%' webkit-playsinline="webkit-playsinline"><p> 不支持video</p> </video>
+				<img class="upward" src="img/upward.png" >
+			</div>
+			<div class="section page4 hide" id="pageFour">
+				<video muted preload='auto' id='video4' src='img/video4.mp4' poster="img/cover4.png" webkit-playsinline='true' playsinline='true'x-webkit-airplay='true' x5-video-player-type='h5-page' x5-video-player-fullscreen='true' x5-video-ignore-metadata='true' width='100%' height='100%' webkit-playsinline="webkit-playsinline"><p> 不支持video</p> </video>
+				<a href="https://mp.weixin.qq.com/s/7qy2RYMUj5eQnOFuoUmNew"><img class="btn" src="img/btn4.png" ></a>
+				<img class="upward" src="img/upward.png" >
+			</div>
+			<div class="section page5 hide" id="pageFive">
+				<video muted preload='auto' id='video5' src='img/video5.mp4' poster="img/cover5.png" webkit-playsinline='true' playsinline='true'x-webkit-airplay='true' x5-video-player-type='h5' x5-video-player-fullscreen='true' x5-video-ignore-metadata='true' width='100%' height='100%' webkit-playsinline="webkit-playsinline"><p> 不支持video</p> </video>
+				<a href="https://e.cib.com.cn/app/mobile/registerDoctor/registerDoctor.do?from=singlemessage"><img class="btn" src="img/btn5.png" ></a>
+				<img class="upward" src="img/upward.png" >
+			</div>
+			<div class="section page6 hide" id="pageSix">
+				<video muted preload='auto' id='video6' src='img/video6.mp4' poster="img/cover6.png" webkit-playsinline='true' playsinline='true'x-webkit-airplay='true' x5-video-player-type='h5' x5-video-player-fullscreen='true' x5-video-ignore-metadata='true' width='100%' height='100%' webkit-playsinline="webkit-playsinline"><p> 不支持video</p> </video>
+				<a href="https://mp.weixin.qq.com/s/cM_JRUjSTo_4fgBeFDaP1Q"><img class="btn" src="img/btn6.png" ></a>
+				<img class="upward" src="img/upward.png" >
+			</div>
+			<div class="section page7 hide" id="pageSeven">
+				<video muted preload='auto' id='video7' src='img/video7.mp4' poster="img/cover7.png" webkit-playsinline='true' playsinline='true' x-webkit-airplay='true' x5-video-player-type='h5' x5-video-player-fullscreen='true' x5-video-ignore-metadata='true' width='100%' height='100%' webkit-playsinline="webkit-playsinline"><p> 不支持video</p> </video>
+				<a href="http://xysh.fjoner.com/index.php?from=singlemessage&isappinstalled=0"><img class="btn" src="img/btn7.png" ></a>
+			</div>
+		</div>
+		<script src="js/EventUtil.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				document.getElementsByTagName("body")[0].style.height = window.innerHeight+'px';
+				document.getElementById("page").style.height = window.innerHeight+'px';
+				document.getElementById("page").style.width = window.innerWidth+'px';
+				if (window.innerHeight >= 700) {
+					$("video").addClass("fit")
+					$(".section .cover").addClass("fit")
+				}
+				$('body').on('touchstart', function () {
+					console.log("用户手指触摸到屏幕...");
+				});
+				var pageImg = $('.page1 img'),img = [],flag = 0;
+				for (var i = 0; i < pageImg.length; i++) {
+					img[i] = new Image()
+					img[i].src = $(pageImg[i]).attr('src');
+					img[i].onload = function(){
+						flag++
+						if( flag == pageImg.length ){
+							$("#pageOne img").addClass("on");
+							setTimeout(function(){
+								$("#pageOne .btn1").addClass("scale")
+							},4000)
+					   }
+					}
+				}
+				
+				var video2 = document.getElementById('video2');
+				var video3 = document.getElementById('video3');
+				var video4 = document.getElementById('video4');
+				var video5 = document.getElementById('video5');
+				var video6 = document.getElementById('video6');
+				var video7 = document.getElementById('video7');
+				
+				//page1
+				$(".btn1").on("click", function(){
+					$(".page1").addClass("hide");
+					$(".page2").removeClass("hide");
+					video2.play();
+				})
+				
+				// page2
+				var pageTwoDown = document.querySelector('#pageTwo');
+				EventUtil.bindEvent(pageTwoDown, 'slidedown', pageTwoHandleDown);
+				function pageTwoHandleDown() {
+					// $(".page2").addClass("hide");
+					// $(".page3").removeClass("hide");
+					// $(".page2 .upward").hide();
+					//$(".page2 .upward").click();
+					$(".page2 .upward").trigger("click");
+				}
+				
+				video2.addEventListener('ended', function(e) {
+					console.log('视频播放完了')
+					$(".page2 .upward").show();
+				})
+				
+				$(".page2 .upward").on("click",function(){
+					alert(222);
+					$(".page2").addClass("hide");
+					$(".page3").removeClass("hide");
+					$(".page2 .upward").hide();
+					video3.play();
+				})
+				
+				video2.addEventListener("x5videoexitfullscreen", function(e){
+					$(".page2 .cover").show();
+				})
+				
+				//page3
+				var pageThreeDown = document.querySelector('#pageThree');
+				EventUtil.bindEvent(pageThreeDown, 'slidedown', pageThreeHandleDown);
+				function pageThreeHandleDown() {
+					$(".page3").addClass("hide");
+					$(".page3 video").addClass("hide");
+					$(".page4").removeClass("hide");
+					$(".page3 .upward").hide();
+					video4.play();
+				}
+				video3.addEventListener('ended', function(e) {
+					console.log('视频播放完了')
+					$(".page3 .upward").show();
+				})
+				
+				$('.page3').on('touchstart', function () {
+					console.log("用户手指触摸到屏幕...");
+					video4.play();
+				});
+				
+				//page4
+				var pageFourDown = document.querySelector('#pageFour');
+				EventUtil.bindEvent(pageFourDown, 'slidedown', pageFourHandleDown);
+				function pageFourHandleDown() {
+					$(".page4").addClass("hide");
+					$(".page5").removeClass("hide");
+					$(".page4 .btn").show();
+					$(".page4 .upward").hide();
+					video5.play();
+				}
+				video4.addEventListener('ended', function(e) {
+					console.log('视频播放完了')
+					$(".page4 .btn").show();
+					$(".page4 .upward").show();
+				})
+				
+				//page5
+				var pageFiveDown = document.querySelector('#pageFive');
+				EventUtil.bindEvent(pageFiveDown, 'slidedown', pageFiveHandleDown);
+				function pageFiveHandleDown() {
+					$(".page5").addClass("hide");
+					$(".page6").removeClass("hide");
+					$(".page5 .btn").show();
+					$(".page5 .upward").hide();
+					video6.play();
+				}
+				video5.addEventListener('ended', function(e) {
+					console.log('视频播放完了')
+					$(".page5 .btn").show();
+					$(".page5 .upward").show();
+				})
+				
+				//page6
+				var pageSixDown = document.querySelector('#pageSix');
+				EventUtil.bindEvent(pageSixDown, 'slidedown', pageSixHandleDown);
+				function pageSixHandleDown() {
+					$(".page6").addClass("hide");
+					$(".page7").removeClass("hide");
+					$(".page6 .btn").show();
+					$(".page6 .upward").hide();
+					video7.play();
+				}
+				video6.addEventListener('ended', function(e) {
+					console.log('视频播放完了')
+					$(".page6 .btn").show();
+					$(".page6 .upward").show();
+				})
+				
+				//page7
+				video7.addEventListener('ended', function(e) {
+					console.log('视频播放完了')
+					$(".page7 .btn").show();
+				})
+			})
+		</script>
+	</body>
+</html>
